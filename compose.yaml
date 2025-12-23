@@ -1,0 +1,17 @@
+name: drawing
+
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=drawing_dev
+      - MYSQL_USER=drawing_dev_user
+      - MYSQL_PASSWORD=drawing_dev_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - drawing-data:/var/lib/mysql
+
+volumes:
+  drawing-data:
